@@ -1,4 +1,5 @@
 import 'package:cheflike/pages/onboarding.dart';
+import 'package:cheflike/pages/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -69,6 +70,26 @@ class MyApp extends StatelessWidget {
             color: HexColor("#9FA5C0"),
           ),
         ),
+        inputDecorationTheme: InputDecorationTheme(
+          iconColor: HexColor("#2E3E5C"),
+          prefixIconColor: HexColor("#2E3E5C"),
+          hintStyle: TextStyle(
+            color: HexColor("9FA5C0"),
+
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(40),
+            borderSide: BorderSide(width: 1, color: HexColor("#D0DBEA")),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(40),
+            borderSide: BorderSide(width: 2, color: HexColor("#1FCC79"))
+          ),
+          errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(40),
+              borderSide: BorderSide(width: 2, color: HexColor("#FF6464"))
+          ),
+        ),
         useMaterial3: false
       ),
       home: const WidgetTree(),
@@ -86,6 +107,6 @@ class WidgetTree extends StatefulWidget {
 class _WidgetTreeState extends State<WidgetTree> {
   @override
   Widget build(BuildContext context) {
-    return const OnBoardingPage();
+    return const SignInPage();
   }
 }

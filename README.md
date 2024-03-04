@@ -1,16 +1,33 @@
-# cheflike
+# 쉐프라이크
 
-foodRecipeApp
+## 참고 링크
 
-## Getting Started
+### 디자인
 
-This project is a starting point for a Flutter application.
+ [참고 피그마 UI Template 링크](https://www.uistore.design/items/chefio-recipe-free-app-ui-kit-for-figma/)
 
-A few resources to get you started if this is your first Flutter project:
+### 라이브러리
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+ [hexcolor 3.0.1](https://pub.dev/packages/hexcolor)
+ [font_awesome_flutter 10.7.0](https://pub.dev/packages/font_awesome_flutter)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## 프로젝트 버젼
+
+flutter => 3.19.2
+
+
+## 프로젝트 시작하기
+
+`pub get`
+
+
+## TODO
+
+### UI
+-[x] onBoarding
+-[x] signIn
+-[ ] signup
+-[ ] verification Code
+-[ ] password Recovery
+- 
