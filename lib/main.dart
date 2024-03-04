@@ -1,6 +1,7 @@
 import 'package:cheflike/pages/onboarding.dart';
 import 'package:cheflike/pages/sign_in.dart';
 import 'package:cheflike/pages/sign_up.dart';
+import 'package:cheflike/pages/verification_code.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: '쉐프라이크',
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
         primaryColor: HexColor("#1FCC79"),
         primaryTextTheme: TextTheme(
           titleLarge: TextStyle(
@@ -107,6 +109,6 @@ class WidgetTree extends StatefulWidget {
 class _WidgetTreeState extends State<WidgetTree> {
   @override
   Widget build(BuildContext context) {
-    return const SignUpPage();
+    return const VerificationCodePage();
   }
 }

@@ -8,9 +8,10 @@
 
 ### 라이브러리
 
- [hexcolor 3.0.1](https://pub.dev/packages/hexcolor)
- [font_awesome_flutter 10.7.0](https://pub.dev/packages/font_awesome_flutter)
-
+- [hexcolor 3.0.1](https://pub.dev/packages/hexcolor)
+- [font_awesome_flutter 10.7.0](https://pub.dev/packages/font_awesome_flutter)
+- [pinput 4.0.0](https://pub.dev/packages/pinput)
+- [stop_watch_timer 3.1.1](https://pub.dev/packages/stop_watch_timer)
 
 ## 프로젝트 버젼
 
@@ -28,6 +29,6 @@ flutter => 3.19.2
 -[x] onBoarding
 -[x] signIn
 -[x] signup
--[ ] verification Code
+-[x] verification Code
 -[ ] password Recovery
-- 
+-[x] password verification Code 
