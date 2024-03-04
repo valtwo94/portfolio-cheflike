@@ -1,5 +1,6 @@
 import 'package:cheflike/pages/onboarding.dart';
 import 'package:cheflike/pages/sign_in.dart';
+import 'package:cheflike/pages/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -75,7 +76,6 @@ class MyApp extends StatelessWidget {
           prefixIconColor: HexColor("#2E3E5C"),
           hintStyle: TextStyle(
             color: HexColor("9FA5C0"),
-
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(40),
@@ -107,6 +107,6 @@ class WidgetTree extends StatefulWidget {
 class _WidgetTreeState extends State<WidgetTree> {
   @override
   Widget build(BuildContext context) {
-    return const SignInPage();
+    return const SignUpPage();
   }
 }
