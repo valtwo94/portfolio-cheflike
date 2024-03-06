@@ -46,7 +46,26 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                         style: Theme.of(context).primaryTextTheme.titleMedium,
                         decoration: InputDecoration(
                           contentPadding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-                          hintText: '비밀번호',
+                          hintText: '새 비밀번호',
+                          prefixIcon: Padding(
+                              padding: const EdgeInsets.only(left: 20, right: 12),
+                              child: Image.asset('assets/images/Lock.png', width: 24, height: 24,)),
+                          suffixIcon: GestureDetector(
+                            onTap: onClickSuffixIcon,
+                            child: Padding(
+                                padding: const EdgeInsets.only(left: 12, right: 20),
+                                child: Image.asset('assets/images/Show.png', width: 24, height: 24,)),
+                          ),
+                        ),
+                        keyboardType: TextInputType.visiblePassword,
+                        obscureText: !_showPassword,
+                      ),
+                      SizedBox(height: 12,),
+                      TextField(
+                        style: Theme.of(context).primaryTextTheme.titleMedium,
+                        decoration: InputDecoration(
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                          hintText: '새 비밀번호 확인',
                           prefixIcon: Padding(
                               padding: const EdgeInsets.only(left: 20, right: 12),
                               child: Image.asset('assets/images/Lock.png', width: 24, height: 24,)),

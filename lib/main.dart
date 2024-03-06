@@ -1,3 +1,4 @@
+import 'package:cheflike/pages/main/index.dart';
 import 'package:cheflike/pages/new_password.dart';
 import 'package:cheflike/pages/onboarding.dart';
 import 'package:cheflike/pages/password_recovery.dart';
@@ -111,6 +112,6 @@ class WidgetTree extends StatefulWidget {
 class _WidgetTreeState extends State<WidgetTree> {
   @override
   Widget build(BuildContext context) {
-    return const NewPasswordPage();
+    return const MainPage();
   }
 }
