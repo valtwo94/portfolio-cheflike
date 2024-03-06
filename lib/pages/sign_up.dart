@@ -82,19 +82,19 @@ class _SignUpPageState extends State<SignUpPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text('비밀번호는 : ', style: Theme.of(context).primaryTextTheme.titleMedium,),
-                            SizedBox(height: 12,),
+                            const SizedBox(height: 12,),
                             Row(
                               children: [
                                 CircleAvatar(radius: 12, backgroundColor: Theme.of(context).primaryColor.withOpacity(0.2), child: Icon(Icons.check, color: Theme.of(context).primaryColor, size: 14,),),
-                                SizedBox(width: 8,),
+                                const SizedBox(width: 8,),
                                 Text('최소 6자', style: Theme.of(context).primaryTextTheme.titleSmall,),
                               ],
                             ),
-                            SizedBox(height: 12,),
+                            const SizedBox(height: 12,),
                             Row(
                               children: [
                                 CircleAvatar(radius: 12, backgroundColor: Theme.of(context).primaryColor.withOpacity(0.2), child: Icon(Icons.check, color: Theme.of(context).primaryColor, size: 14,),),
-                                SizedBox(width: 8,),
+                                const SizedBox(width: 8,),
                                 Text('숫자 포함', style: Theme.of(context).primaryTextTheme.titleSmall,),
                               ],
                             ),

@@ -26,9 +26,9 @@ flutter => 3.19.2
 ## TODO
 
 ### UI
--[x] onBoarding
--[x] signIn
--[x] signup
--[x] verification Code
--[ ] password Recovery
--[x] password verification Code 
+- [x] onBoarding
+- [x] signIn
+- [x] signup
+- [x] verification Code
+- [ ] password Recovery
+- [x] password verification Code 
