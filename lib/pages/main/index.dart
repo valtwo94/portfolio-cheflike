@@ -1,10 +1,14 @@
+
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:cheflike/pages/main/home.dart';
 import 'package:cheflike/pages/main/notification.dart';
 import 'package:cheflike/pages/main/profile.dart';
+import 'package:cheflike/pages/main/search.dart';
+import 'package:cheflike/pages/upload.dart';
+import 'package:cheflike/providers/main_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:provider/provider.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -14,25 +18,18 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  PageController pageController = PageController();
-
 
   @override
   Widget build(BuildContext context) {
+    final mp = Provider.of<MainProvider>(context);
+
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 1,
-        title: Text("쉐프라이크", style: Theme.of(context).primaryTextTheme.titleMedium,),
-        actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.search, color: HexColor("#2E3E5C"),))
-        ],
-      ),
       body: PageView(
-        controller: pageController,
+        controller: mp.mainPageController,
         physics: const NeverScrollableScrollPhysics(),
         children: const [
           HomePage(),
+          SearchPage(),
           NotificationPage(),
           ProfilePage(),
         ],
@@ -46,7 +43,22 @@ class _MainPageState extends State<MainPage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: AnimatedBottomNavigationBar(
         activeIndex: 0,
-        onTap: (v){},
+        onTap: (v){
+          switch(v){
+            case 0:
+              mp.mainPageController.jumpToPage(0);
+              break;
+            case 1:
+              Navigator.push(context, MaterialPageRoute(builder: (context) => UploadPage()));
+              break;
+            case 2:
+              mp.mainPageController.jumpToPage(2);
+              break;
+            case 3:
+              mp.mainPageController.jumpToPage(3);
+              break;
+          }
+        },
         icons: const [
           FontAwesomeIcons.house,
           FontAwesomeIcons.penToSquare,

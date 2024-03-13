@@ -1,15 +1,23 @@
+import 'package:cheflike/pages/main/home.dart';
 import 'package:cheflike/pages/main/index.dart';
 import 'package:cheflike/pages/new_password.dart';
 import 'package:cheflike/pages/onboarding.dart';
 import 'package:cheflike/pages/password_recovery.dart';
+import 'package:cheflike/pages/main/search.dart';
 import 'package:cheflike/pages/sign_in.dart';
 import 'package:cheflike/pages/sign_up.dart';
 import 'package:cheflike/pages/verification_code.dart';
+import 'package:cheflike/providers/main_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  await dotenv.load(fileName: ".env");
+  runApp(MultiProvider(
+      providers: [ChangeNotifierProvider.value(value: MainProvider())],
+      child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -22,81 +30,78 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: '쉐프라이크',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        primaryColor: HexColor("#1FCC79"),
-        primaryTextTheme: TextTheme(
-          titleLarge: TextStyle(
-              fontSize: 22,
-              color: HexColor("#2E3E5C"),
-              fontWeight: FontWeight.bold),
-          titleMedium: TextStyle(
+          scaffoldBackgroundColor: Colors.white,
+          primaryColor: HexColor("#1FCC79"),
+          primaryTextTheme: TextTheme(
+            titleLarge: TextStyle(
+                fontSize: 22,
+                color: HexColor("#2E3E5C"),
+                fontWeight: FontWeight.bold),
+            titleMedium: TextStyle(
+                fontSize: 17,
+                color: HexColor("#2E3E5C"),
+                fontWeight: FontWeight.bold),
+            titleSmall: TextStyle(
+                fontSize: 15,
+                color: HexColor("#2E3E5C"),
+                fontWeight: FontWeight.bold),
+            bodyLarge: TextStyle(
               fontSize: 17,
               color: HexColor("#2E3E5C"),
-              fontWeight: FontWeight.bold),
-          titleSmall: TextStyle(
+            ),
+            bodyMedium: TextStyle(
               fontSize: 15,
               color: HexColor("#2E3E5C"),
-              fontWeight: FontWeight.bold),
-          bodyLarge: TextStyle(
-            fontSize: 17,
-            color: HexColor("#2E3E5C"),
+            ),
+            bodySmall: TextStyle(
+              fontSize: 12,
+              color: HexColor("#2E3E5C"),
+            ),
           ),
-          bodyMedium: TextStyle(
-            fontSize: 15,
-            color: HexColor("#2E3E5C"),
-          ),
-          bodySmall: TextStyle(
-            fontSize: 12,
-            color: HexColor("#2E3E5C"),
-          ),
-        ),
-        textTheme: TextTheme(
-          titleLarge: TextStyle(
-              fontSize: 22,
-              color: HexColor("#9FA5C0"),
-              fontWeight: FontWeight.bold),
-          titleMedium: TextStyle(
+          textTheme: TextTheme(
+            titleLarge: TextStyle(
+                fontSize: 22,
+                color: HexColor("#9FA5C0"),
+                fontWeight: FontWeight.bold),
+            titleMedium: TextStyle(
+                fontSize: 17,
+                color: HexColor("#9FA5C0"),
+                fontWeight: FontWeight.bold),
+            titleSmall: TextStyle(
+                fontSize: 15,
+                color: HexColor("#9FA5C0"),
+                fontWeight: FontWeight.bold),
+            bodyLarge: TextStyle(
               fontSize: 17,
               color: HexColor("#9FA5C0"),
-              fontWeight: FontWeight.bold),
-          titleSmall: TextStyle(
+            ),
+            bodyMedium: TextStyle(
               fontSize: 15,
               color: HexColor("#9FA5C0"),
-              fontWeight: FontWeight.bold),
-          bodyLarge: TextStyle(
-            fontSize: 17,
-            color: HexColor("#9FA5C0"),
+            ),
+            bodySmall: TextStyle(
+              fontSize: 12,
+              color: HexColor("#9FA5C0"),
+            ),
           ),
-          bodyMedium: TextStyle(
-            fontSize: 15,
-            color: HexColor("#9FA5C0"),
-          ),
-          bodySmall: TextStyle(
-            fontSize: 12,
-            color: HexColor("#9FA5C0"),
-          ),
-        ),
-        inputDecorationTheme: InputDecorationTheme(
-          iconColor: HexColor("#2E3E5C"),
-          prefixIconColor: HexColor("#2E3E5C"),
-          hintStyle: TextStyle(
-            color: HexColor("9FA5C0"),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(40),
-            borderSide: BorderSide(width: 1, color: HexColor("#D0DBEA")),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(40),
-            borderSide: BorderSide(width: 2, color: HexColor("#1FCC79"))
-          ),
-          errorBorder: OutlineInputBorder(
+          inputDecorationTheme: InputDecorationTheme(
+            iconColor: HexColor("#2E3E5C"),
+            prefixIconColor: HexColor("#2E3E5C"),
+            hintStyle: TextStyle(
+              color: HexColor("9FA5C0"),
+            ),
+            enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(40),
-              borderSide: BorderSide(width: 2, color: HexColor("#FF6464"))
+              borderSide: BorderSide(width: 1, color: HexColor("#D0DBEA")),
+            ),
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(40),
+                borderSide: BorderSide(width: 2, color: HexColor("#1FCC79"))),
+            errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(40),
+                borderSide: BorderSide(width: 2, color: HexColor("#FF6464"))),
           ),
-        ),
-        useMaterial3: false
-      ),
+          useMaterial3: false),
       home: const WidgetTree(),
     );
   }
