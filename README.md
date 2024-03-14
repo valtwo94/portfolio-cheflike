@@ -27,6 +27,11 @@
 - [flutter_dotenv 5.1.0](https://pub.dev/packages/flutter_dotenv)
 - [modal_bottom_sheet 3.0.0](https://pub.dev/packages/modal_bottom_sheet)
 - [provider 6.1.2](https://pub.dev/packages/provider)
+- [image_picker 1.0.7](https://pub.dev/packages/image_picker)
+
+
+
+
 
 ### 외부 API
 
